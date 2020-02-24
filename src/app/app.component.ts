@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend-angular';
+  popAlert(){
+    alert("hit me");
+  }
 }
