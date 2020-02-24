@@ -6,6 +6,6 @@ import { Component } from '@angular/core'
 })
 export class PostCreateComponent {
   onAddPost(){
-    alert("Data Saved!")
+    alert("Data Saved! (form post-create.component)")
   }
 }
