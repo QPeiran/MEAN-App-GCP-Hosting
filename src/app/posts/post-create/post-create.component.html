@@ -1,7 +1,8 @@
 <h2>Posts create from post-create.component.html</h2>
+<!-- property binding -- name the DOM element then operate around it-->
 <textarea rows="6" [value] = "lianggePost" #inputText></textarea>
 <hr>
-<button (click) = "onAddPost(inputText)"> Save Data</button>
+<button (click) = "onAddPost(inputText)"> Save Data</button> <!--event binding-->
 <p>{{yigePost}}</p>
 <!--two ways binding ngModel-->
 <textarea rows="10" [(ngModel)]="enterValue"></textarea>
