@@ -5,7 +5,15 @@ import { Component } from '@angular/core'
   templateUrl: './post-create.component.html'
 })
 export class PostCreateComponent {
-  onAddPost(){
-    alert("Data Saved! (form post-create.component)")
+  yigePost = "Dummy";
+  lianggePost = "oldPost";
+  enterValue = "";
+  onAddPost(input: HTMLTextAreaElement){
+    console.dir(input);
+    alert("Data Saved! (form post-create.component)");
+    this.yigePost = input.value;
+  }
+  onAddNewPost(){
+    this.lianggePost = this.enterValue;
   }
 }

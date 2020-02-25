@@ -1,4 +1,10 @@
 <h2>Posts create from post-create.component.html</h2>
-<textarea rows="6"></textarea>
+<textarea rows="6" [value] = "lianggePost" #inputText></textarea>
 <hr>
-<button (click) = "onAddPost()"> Save Data</button>
+<button (click) = "onAddPost(inputText)"> Save Data</button>
+<p>{{yigePost}}</p>
+<!--two ways binding ngModel-->
+<textarea rows="10" [(ngModel)]="enterValue"></textarea>
+<hr>
+<button (click) = "onAddNewPost()"> Save Data</button>
+<p>{{lianggePost}}</p>
