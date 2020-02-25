@@ -18,7 +18,4 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  yigefunction(){
-    alert("alert!");
-  }//it's not working -- not the right place to put "yigefunction"
 }

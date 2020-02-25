@@ -6,9 +6,14 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    function yigefunction()
+      {alert("alert from index.html!");}
+  //it's not working by putting to any component/moudle file
+  </script>
 </head>
 <body>
-  <button (click) = "yigefunction()">hit me</button>
+  <button onclick = "yigefunction()">hit me</button>
   <h1>Goodies in the index.html</h1>
   <app-root></app-root>
 </body>
