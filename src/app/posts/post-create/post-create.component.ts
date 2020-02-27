@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post-create',
@@ -8,13 +8,25 @@ import { Component } from '@angular/core'
 export class PostCreateComponent {
   yigePost = "Dummy";
   lianggePost = "oldPost";
-  enterValue = "";
+  @Output() ceatingPostEvent = new EventEmitter;
+
+  enterTitle = "errorT";
+  enterContent = "errorC";
   onAddPost(input: HTMLTextAreaElement){
     console.dir(input);
     alert("Data Saved! (form post-create.component)");
     this.yigePost = input.value;
   }
   onAddNewPost(){
-    this.lianggePost = this.enterValue;
+    const posting = {
+      title : this.enterTitle,
+      content : this.enterContent
+    }
+    console.log(posting);
+    // var title = this.enterTitle;
+    // var content = this.enterContent;
+    // console.log(title);
+    // console.log(content);
+    this.ceatingPostEvent.emit(posting); //emiting event that contains 'posting'
   }
 }
