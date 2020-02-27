@@ -22,7 +22,7 @@ export class PostCreateComponent {
       title : this.enterTitle,
       content : this.enterContent
     }
-    console.log(posting);
+    //console.log(posting);
     // var title = this.enterTitle;
     // var content = this.enterContent;
     // console.log(title);

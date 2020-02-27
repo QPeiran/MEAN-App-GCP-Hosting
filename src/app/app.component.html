@@ -5,7 +5,7 @@
   <iframe width="500" height="240" src="https://www.youtube.com/embed/8qbnut5lTYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
   <button (click) = "popAlert()">pop alert</button>
-  <app-post-create></app-post-create>
+  <app-post-create (ceatingPostEvent) = "transPosts($event)"></app-post-create>
   <post-list></post-list>
 </main>
 
