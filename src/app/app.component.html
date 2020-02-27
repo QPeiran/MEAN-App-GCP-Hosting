@@ -6,6 +6,6 @@
 
   <button (click) = "popAlert()">pop alert</button>
   <app-post-create (ceatingPostEvent) = "transPosts($event)"></app-post-create>
-  <post-list></post-list>
+  <post-list [posts] = "storePosts"></post-list>
 </main>
 
