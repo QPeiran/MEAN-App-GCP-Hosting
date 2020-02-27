@@ -32,12 +32,18 @@ export class PostCreateComponent {
     this.ceatingPostEvent.emit(posting); //emiting event that contains 'posting'
   }
   onSubmit(f:NgForm){
-    const posting: Post = f.value;
+    //const posting: Post = f.value;
+    //or
+    const posting :Post = {
+      title : f.value.title,
+      content : f.value.content
+    }
     //console.log(posting);
     // var title = this.enterTitle;
     // var content = this.enterContent;
      console.log(posting);
     //// console.log(content);
+    if (f.invalid) {return}
     this.ceatingPostEvent.emit(posting); //emiting event that contains 'posting'
   }
 }
