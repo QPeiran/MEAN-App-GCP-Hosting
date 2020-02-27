@@ -18,3 +18,12 @@
   (click) = "onAddNewPost()"> Save Data</button>
 </mat-card>
 
+<hr>
+
+<hr>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input name="title" ngModel required #first="ngModel">
+  <hr>
+  <input name="content" ngModel>
+  <button>Submit</button>
+</form>

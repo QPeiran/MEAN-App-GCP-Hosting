@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Post } from '../post.model'
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-post-create',
@@ -28,6 +29,15 @@ export class PostCreateComponent {
     // var content = this.enterContent;
     // console.log(title);
     // console.log(content);
+    this.ceatingPostEvent.emit(posting); //emiting event that contains 'posting'
+  }
+  onSubmit(f:NgForm){
+    const posting: Post = f.value;
+    //console.log(posting);
+    // var title = this.enterTitle;
+    // var content = this.enterContent;
+     console.log(posting);
+    //// console.log(content);
     this.ceatingPostEvent.emit(posting); //emiting event that contains 'posting'
   }
 }
