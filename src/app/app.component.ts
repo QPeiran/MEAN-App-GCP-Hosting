@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from './posts/post.model';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  storePosts = [];
+  storePosts: Post[] = [];
   title = 'frontend-angular';
   popAlert(){
     alert("hit me from app.component");
   }
-  transPosts(aPost : JSON){
+  transPosts(aPost: Post){
     this.storePosts.push(aPost);
     //console.log(this.storePosts);
   }

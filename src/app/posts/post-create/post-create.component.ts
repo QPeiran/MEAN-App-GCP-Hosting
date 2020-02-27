@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Post } from '../post.model'
 
 @Component({
   selector: 'app-post-create',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class PostCreateComponent {
   yigePost = "Dummy";
   lianggePost = "oldPost";
-  @Output() ceatingPostEvent = new EventEmitter;
+  @Output() ceatingPostEvent = new EventEmitter<Post>();
 
   enterTitle = "errorT";
   enterContent = "errorC";
@@ -18,7 +19,7 @@ export class PostCreateComponent {
     this.yigePost = input.value;
   }
   onAddNewPost(){
-    const posting = {
+    const posting: Post = {
       title : this.enterTitle,
       content : this.enterContent
     }
