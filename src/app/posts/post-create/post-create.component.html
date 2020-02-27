@@ -22,8 +22,10 @@
 
 <hr>
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-  <input name="title" ngModel required minlength="1">
+  <input name="title" ngModel required minlength="1" #titles = "ngModel">
+  <p *ngIf = "titles.invalid"> Please Enter a title bigger than 1</p>
   <hr>
-  <input name="content" ngModel required minlength="5">
+  <input name="content" ngModel required minlength="5" #contents = "ngModel">
+  <p *ngIf = "contents.invalid"> Please Enter a title bigger than 5</p>
   <button>Submit</button>
 </form>
