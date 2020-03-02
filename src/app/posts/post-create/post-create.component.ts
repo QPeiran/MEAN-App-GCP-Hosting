@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Post } from '../post.model'
 import { NgForm } from '@angular/forms';
+import { PostService } from 'src/app/posts.service';
 
 @Component({
   selector: 'app-post-create',
@@ -11,6 +12,8 @@ export class PostCreateComponent {
   yigePost = "Dummy";
   lianggePost = "oldPost";
   @Output() ceatingPostEvent = new EventEmitter<Post>();
+
+  constructor(public aPostServiceInstance: PostService){}
 
   enterTitle = "errorT";
   enterContent = "errorC";
