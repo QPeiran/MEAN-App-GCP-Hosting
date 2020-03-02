@@ -14,6 +14,6 @@ export class AppComponent {
   }
   transPosts(aPost: Post){
     this.storePosts.push(aPost);
-    //console.log(this.storePosts);
+    console.log(this.storePosts);
   }
 }

@@ -30,8 +30,8 @@ export class PostCreateComponent {
     //console.log(posting);
     // var title = this.enterTitle;
     // var content = this.enterContent;
-    // console.log(title);
-    // console.log(content);
+     console.log(posting.title);
+     console.log(posting.content);
     this.ceatingPostEvent.emit(posting); //emiting event that contains 'posting'
   }
   onSubmit(f:NgForm){
