@@ -7,13 +7,18 @@ import { Post } from './posts/post.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  storePosts: Post[] = [];
+  storePosts1: Post[] = [];
+  storePosts2: Post[] = [];
   title = 'frontend-angular';
   popAlert(){
     alert("hit me from app.component");
   }
-  transPosts(aPost: Post){
-    this.storePosts.push(aPost);
-    console.log(this.storePosts);
+  transPosts1(aPost: Post){
+    this.storePosts1.push(aPost);
+    console.log(this.storePosts1);
+  }
+  transPosts2(aPost: Post){
+    this.storePosts2.push(aPost);
+    console.log(this.storePosts2);
   }
 }

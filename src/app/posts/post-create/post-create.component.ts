@@ -11,7 +11,8 @@ import { PostService } from 'src/app/posts.service';
 export class PostCreateComponent {
   yigePost = "Dummy";
   lianggePost = "oldPost";
-  @Output() ceatingPostEvent = new EventEmitter<Post>();
+  @Output() ceatingPostEvent1 = new EventEmitter<Post>();
+  @Output() ceatingPostEvent2 = new EventEmitter<Post>();
 
   constructor(public aPostServiceInstance: PostService){}
 
@@ -32,7 +33,7 @@ export class PostCreateComponent {
     // var content = this.enterContent;
      console.log(posting.title);
      console.log(posting.content);
-    this.ceatingPostEvent.emit(posting); //emiting event that contains 'posting'
+    this.ceatingPostEvent1.emit(posting); //emiting event that contains 'posting'
   }
   onSubmit(f:NgForm){
     //const posting: Post = f.value;
@@ -47,6 +48,6 @@ export class PostCreateComponent {
      console.log(posting);
     //// console.log(content);
     if (f.invalid) {return}
-    this.ceatingPostEvent.emit(posting); //emiting event that contains 'posting'
+    this.ceatingPostEvent2.emit(posting); //emiting event that contains 'posting'
   }
 }
