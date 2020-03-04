@@ -9,7 +9,7 @@ import { PostService } from 'src/app/posts.service';
 })
 export class PostListComponent1 implements OnInit{
   @Input() posts1 : Post[] = [];
-  @Input() posts2 : Post[] = [];
+  posts2 : Post[] = [];
 
   constructor (public postService: PostService){
     //"public" keywork automatically create a new property (postService)
@@ -17,11 +17,10 @@ export class PostListComponent1 implements OnInit{
   }
 
   ngOnInit() {
-    this.posts2 = this.postService.PostsGetter();
-    this.postService.postsUpdatedGetter().subscribe(
-      (posts: Post[]) => {
+    //this.posts2 = this.postService.PostsGetter();
+    this.postService.postsUpdatedGetter()
+      .subscribe((posts: Post[]) => {
         this.posts2 = posts;
-      }
-    );
+      });
   }
  }

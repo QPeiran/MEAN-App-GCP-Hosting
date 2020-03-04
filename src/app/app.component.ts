@@ -8,7 +8,7 @@ import { Post } from './posts/post.model';
 })
 export class AppComponent {
   storePosts1: Post[] = [];
-  storePosts2: Post[] = [];
+  //storePosts2: Post[] = [];
   title = 'frontend-angular';
   popAlert(){
     alert("hit me from app.component");
@@ -17,8 +17,9 @@ export class AppComponent {
     this.storePosts1.push(aPost);
     console.log(this.storePosts1);
   }
-  transPosts2(aPost: Post){
-    this.storePosts2.push(aPost);
-    console.log(this.storePosts2);
-  }
+  // transPosts2(aPost: Post){
+  //   this.storePosts2.push(aPost);
+  //   console.log(this.storePosts2);
+  // }
+  //we dont need all these event bindings when using 'service'
 }
