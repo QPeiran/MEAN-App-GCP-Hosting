@@ -12,9 +12,9 @@ export class PostCreateComponent {
   yigePost = "Dummy";
   lianggePost = "oldPost";
   @Output() ceatingPostEvent1 = new EventEmitter<Post>();
-  @Output() ceatingPostEvent2 = new EventEmitter<Post>();
+  //@Output() ceatingPostEvent2 = new EventEmitter<Post>();
 
-  constructor(public aPostServiceInstance: PostService){}
+  constructor(public aPostServiceInstance: PostService) {}
 
   enterTitle = "errorT";
   enterContent = "errorC";
@@ -36,18 +36,17 @@ export class PostCreateComponent {
     this.ceatingPostEvent1.emit(posting); //emiting event that contains 'posting'
   }
   onSubmit(f:NgForm){
+    if (f.invalid) {return;}
     //const posting: Post = f.value;
     //or
     const posting :Post = {
       title : f.value.title,
       content : f.value.content
     }
-    //console.log(posting);
-    // var title = this.enterTitle;
-    // var content = this.enterContent;
-     console.log(posting);
-    //// console.log(content);
-    if (f.invalid) {return}
-    this.ceatingPostEvent2.emit(posting); //emiting event that contains 'posting'
+    console.log(" post-create ");
+    console.log(posting);
+
+    this.aPostServiceInstance.PostsSetter(posting);
+    //this.ceatingPostEvent2.emit(posting); //emiting event that contains 'posting'
   }
 }

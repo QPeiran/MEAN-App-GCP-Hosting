@@ -5,10 +5,13 @@ export class PostService {
   PostsGetter() {
     //return this.SomePosts;
     //this is a reference type, replace this with a deepcopy
-    return [...this.SomePosts];
+    //return [...this.SomePosts];
+    return this.SomePosts;
   }
   PostsSetter(ANewPost: Post) {
     this.SomePosts.push(ANewPost);
+    console.log("post.service ");
+    console.log(this.SomePosts);
   }
 }
 
