@@ -10,4 +10,9 @@ import { PostService } from 'src/app/posts.service';
 export class PostListComponent1 {
   @Input() posts1 : Post[] = [];
   @Input() posts2 : Post[] = [];
+
+  constructor (public postService: PostService){
+    //"public" keywork automatically create a new property (postService)
+    //in this component and store the incoming value in that property
+  }
  }
