@@ -19,7 +19,8 @@ export class PostService {
   postsUpdatedGetter() {
     console.log("getting Posts: ");
     console.log(this.SomePosts);
-    return this.postsUpdated.asObservable(); ///returning an object from "Observable" class
+    return this.postsUpdated.asObservable(); ///return this.subject
+    //Subjects are observables themselves but what sets them apart is that they are also observers.
+    //".asObservable()" return a good old Observable version, will make your code much safer and will prevent poor coding practices
   }
 }
-
