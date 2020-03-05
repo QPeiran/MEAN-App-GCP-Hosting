@@ -9,16 +9,17 @@ export class PostService {
   //   //this is a reference type, replace this with a deepcopy
   //   return [...this.SomePosts];
   // }
-
-  postsUpdatedGetter(){
-    return this.postsUpdated.asObservable();
-  }
-
   PostsSetter(ANewPost: Post) {
     this.SomePosts.push(ANewPost);
     console.log("post.service ");
     console.log(this.SomePosts);
     this.postsUpdated.next([...this.SomePosts]);
+  }
+
+  postsUpdatedGetter() {
+    console.log("getting Posts: ");
+    console.log(this.SomePosts);
+    return this.postsUpdated.asObservable(); ///returning an object from "Observable" class
   }
 }
 

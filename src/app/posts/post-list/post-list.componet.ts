@@ -18,8 +18,9 @@ export class PostListComponent1 implements OnInit{
 
   ngOnInit() {
     //this.posts2 = this.postService.PostsGetter();
-    this.postService.postsUpdatedGetter()
+    this.postService.postsUpdatedGetter() //call subscribe() method from "Observable" class
       .subscribe((posts: Post[]) => {
+        //console.log(this.posts2);
         this.posts2 = posts;
       });
   }
