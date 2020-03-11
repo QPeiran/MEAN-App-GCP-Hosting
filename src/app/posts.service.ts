@@ -1,6 +1,10 @@
 import { Post, Todo } from './posts/post.model';
+import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+@Injectable({
+  providedIn: 'root'
+})
 export class PostService {
   private SomePosts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();

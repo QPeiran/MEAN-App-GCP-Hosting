@@ -51,6 +51,10 @@ export class PostListComponent1 implements OnInit, OnDestroy{
   }
 
   FetchPost(obj: Object) {
+    this.postService.getTodos().subscribe(todos => {
+      console.log(todos[1]);
+    });
+
 
   }
 

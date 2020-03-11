@@ -35,7 +35,7 @@ import { PostService } from './posts.service';
     MatExpansionModule,
     HttpClientModule
   ],
-  providers: [PostService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
