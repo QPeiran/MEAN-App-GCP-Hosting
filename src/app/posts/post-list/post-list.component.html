@@ -9,13 +9,13 @@
 <p class="mat-body-strong myStyle" *ngIf = "posts1.length  == 0">No post yet</p>
 
 <mat-accordion multi = "true" *ngIf = "posts2.length > 0">
-  <mat-expansion-panel *ngFor = "let post2 of posts2">
+  <mat-expansion-panel *ngFor = "let post2 of posts2; let i = index">
     <mat-expansion-panel-header>
       <p>{{post2.title}}</p>
     </mat-expansion-panel-header>
       <p>{{post2.content}}</p>
       <mat-action-row>
-        <button mat-raised-button color = "primary" (click) = "FetchPost(post2)"> Fetch & Edit </button>
+        <button mat-raised-button color = "primary" (click) = "FetchPost(post2, i)"> Fetch & Edit </button>
         <button mat-raised-button color = "warn" (click) = "DeletePost(post2)"> Delete </button>
       </mat-action-row>
   </mat-expansion-panel>

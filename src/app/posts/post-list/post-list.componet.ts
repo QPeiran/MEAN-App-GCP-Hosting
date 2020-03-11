@@ -50,10 +50,10 @@ export class PostListComponent1 implements OnInit, OnDestroy{
     this.postsSub.unsubscribe();
   }
 
-  FetchPost(obj: Post) {
+  FetchPost(obj: Post, i: number) {
     this.postService.getTodos().subscribe((todos) => {
-      console.log(todos[1]);
-      obj.title = todos[1].title;
+      console.log(todos[i]);
+      obj.title = todos[i].title;
     });
     let newTodo: Todo = {
       "userId": 1,
@@ -64,7 +64,7 @@ export class PostListComponent1 implements OnInit, OnDestroy{
     this.postService.putTodos(newTodo).subscribe((todos)=>{
       console.log(todos);
       console.dir(todos)
-    })
+    });
     //console.dir(obj);
     //console.log(obj.title);
   }
