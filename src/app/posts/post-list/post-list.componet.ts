@@ -50,14 +50,15 @@ export class PostListComponent1 implements OnInit, OnDestroy{
     this.postsSub.unsubscribe();
   }
 
-  FetchPost(obj: Object) {
+  FetchPost(obj: Post) {
     this.postService.getTodos().subscribe(todos => {
       console.log(todos[1]);
+      obj.title = todos[1].title;
     });
-
-
+    //console.dir(obj);
+    //console.log(obj.title);
   }
 
-  DeletePost(obj: Object) {
+  DeletePost(obj: Post) {
   }
  }
