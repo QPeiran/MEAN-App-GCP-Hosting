@@ -14,6 +14,10 @@
       <p>{{post2.title}}</p>
     </mat-expansion-panel-header>
       <p>{{post2.content}}</p>
+      <mat-action-row>
+        <button mat-raised-button color = "primary" (click) = "EditPost(this.post2.content)"> Edit </button>
+        <button mat-raised-button color = "warn" (click) = "DeletePost(post2)"> Delete </button>
+      </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
 <p class="mat-body-strong myStyle" *ngIf = "posts2.length  == 0">No post yet</p>
