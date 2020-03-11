@@ -50,8 +50,8 @@ export class PostListComponent1 implements OnInit, OnDestroy{
     this.postsSub.unsubscribe();
   }
 
-  EditPost(i: String) {
-    console.log(i);
+  FetchPost(obj: Object) {
+
   }
 
   DeletePost(obj: Object) {

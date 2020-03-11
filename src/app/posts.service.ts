@@ -1,6 +1,6 @@
-import { Post } from './posts/post.model';
-import {Subject} from 'rxjs';
-
+import { Post, Todo } from './posts/post.model';
+import { Subject, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class PostService {
   private SomePosts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
@@ -9,6 +9,15 @@ export class PostService {
   //   //this is a reference type, replace this with a deepcopy
   //   return [...this.SomePosts];
   // }
+
+  todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
+
+  constructor(private http: HttpClient) { }
+
+  getTodos(): Observable<Todo[]> {
+    return this.http.get<Todo[]>(this.todosUrl);
+  }
+
   PostsSetter(ANewPost: Post) {
     this.SomePosts.push(ANewPost);
     console.log("post.service ");
