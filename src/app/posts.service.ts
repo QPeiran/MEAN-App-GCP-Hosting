@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PostService {
-  private SomePosts: Post[] = [];
+  private SomePosts: Post[] = []; //here is the publisher?
   private postsUpdated = new Subject<Post[]>();
   // PostsGetter() {
   //   //return this.SomePosts; //it works but a bad practice tho
@@ -46,5 +46,9 @@ export class PostService {
     return this.postsUpdated.asObservable(); ///return this.subject as "Observable"
     //Subjects are observables themselves but what sets them apart is that they are also observers.
     //".asObservable()" return a good old Observable version, will make your code much safer and will prevent poor coding practices
+  }
+
+  deletePost(i:number){
+    this.SomePosts.splice(i,1);
   }
 }

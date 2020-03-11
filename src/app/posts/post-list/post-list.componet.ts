@@ -69,6 +69,10 @@ export class PostListComponent1 implements OnInit, OnDestroy{
     //console.log(obj.title);
   }
 
-  DeletePost(obj: Post) {
+  DeletePost(obj:Post, index: number) {
+    this.posts2 = this.posts2.filter((p) => p != obj);
+    this.postService.deletePost(index);
+    //this.posts2.splice(index,1);
+    console.log(this.posts2);
   }
  }

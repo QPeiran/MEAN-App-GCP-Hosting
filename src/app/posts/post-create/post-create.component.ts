@@ -2,8 +2,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Post } from '../post.model'
 import { NgForm } from '@angular/forms';
 import { PostService } from 'src/app/posts.service';
-import {of, Observable} from 'rxjs'; // Testing "Observale" here -- safe to delete//
-
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
