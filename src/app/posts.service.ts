@@ -2,6 +2,12 @@ import { Post, Todo } from './posts/post.model';
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+} ////Const out of class
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +26,12 @@ export class PostService {
 
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.todosUrl);
-  }
+  } // GET method
+
+  putTodos(todo: Todo): Observable<any> {
+    const url = `${this.todosUrl}/${todo.id}`;
+    return this.http.put(url, todo, httpOptions);
+   } //PUT method
 
   PostsSetter(ANewPost: Post) {
     this.SomePosts.push(ANewPost);

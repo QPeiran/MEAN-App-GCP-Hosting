@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { Post } from '../post.model';
+import { Post, Todo } from '../post.model';
 import { PostService } from 'src/app/posts.service';
 import { Subscription } from 'rxjs';
 
@@ -51,10 +51,20 @@ export class PostListComponent1 implements OnInit, OnDestroy{
   }
 
   FetchPost(obj: Post) {
-    this.postService.getTodos().subscribe(todos => {
+    this.postService.getTodos().subscribe((todos) => {
       console.log(todos[1]);
       obj.title = todos[1].title;
     });
+    let newTodo: Todo = {
+      "userId": 1,
+      "id": 2,
+      "title": obj.content,
+      "completed": true
+    }
+    this.postService.putTodos(newTodo).subscribe((todos)=>{
+      console.log(todos);
+      console.dir(todos)
+    })
     //console.dir(obj);
     //console.log(obj.title);
   }
