@@ -9,7 +9,7 @@ import { Post } from './posts/post.model';
 export class AppComponent {
   storePosts1: Post[] = [];
   //storePosts2: Post[] = [];
-  //title = 'frontend-angular';
+  title = 'Angular for FrontEnd';
   popAlert(){
     alert("hit me from app.component");
   }
