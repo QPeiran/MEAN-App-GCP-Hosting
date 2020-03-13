@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent1 } from './posts/post-list/post-list.componet';
-import { PostService } from './posts.service';
 import { MemesComponent } from './memes/memes.component';
 
 @NgModule({
