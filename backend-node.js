@@ -1,15 +1,19 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
+const path = require('path');
+
+app.use(express.static('dist/frontend-angular'));
 
 app.get('/', (req,res) => {
-  res.json(
-    {
-      msg:'Welcome to the Backend'
-    }
-  )
+  var options = {
+    root: path.join(__dirname, 'dist/frontend-angular')
+  }
+  return res.sendFile('index.html', options);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running at PORT ${PORT}`);
+
+
+app.listen(port, () => {
+  console.log(`Server is running at PORT ${port}`);
 });
