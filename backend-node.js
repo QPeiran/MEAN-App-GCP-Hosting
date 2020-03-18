@@ -34,3 +34,37 @@ app.listen(port, () => {
 });
 
 module.exports = app;
+
+////////////////////////////CloudSQL for MySQL part//////////////////////////
+var mysql = require('mysql');
+
+var connection = mysql.createConnection({
+  host: 'localhost',  /// <== change to CloudSQL for MySQL expose port
+  user: 'Peiran',  /// <== change
+  password: '',
+  database: 'scanning-database'
+});
+connection.connect();
+var event = {  //<== a dummy event for test
+  Barcode: '112A2$$$$$$$$0013010601',
+  Production_Batch: 1,
+  Recipe_and_P: "A2",
+  Timestamp: "6:29:24 AM",
+  Date: "3/12/2020",
+  Seq_Code: "0001 of 0106",
+  Week: 12,
+  Team_Leader: "iXUsr_Siti Rahmah Siregar 6092;",
+  Replenisher: "Dummy;",
+  Pickers: "Dummy;Dummy;Dummy;",
+  Notes: "",
+  Missing_Products:""
+};
+
+var query = connection.query('insert into scanning-database ?', event, function(err, result) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.error(result);
+});
+/////////////////////////////////////////end here///////
