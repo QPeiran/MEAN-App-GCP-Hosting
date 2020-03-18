@@ -21,6 +21,8 @@ export class DogmemesComponent implements OnInit {
         //document.body.appendChild(image);
         console.log(json.data.image_url);
         document.getElementById("pasteMemes").appendChild(image);
+      }).catch(err => {
+        console.error('Error:', err);
       })
   }
 }
