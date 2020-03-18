@@ -39,7 +39,7 @@ module.exports = app;
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  host: 'localhost',  /// <== change to CloudSQL for MySQL expose port
+  host: 'localhost:3306',  /// <== change to CloudSQL for MySQL expose port
   user: 'Peiran',  /// <== change
   password: '',
   database: 'scanning-database'
