@@ -4,8 +4,13 @@ export interface Post {
 }
 
 export interface Todo {
-  userId: Number,
-  id: Number,
+  userId: number,
+  id: number,
   title: string,
   completed: boolean
+}
+
+export interface Profile {
+  name: string,
+  descriptions: string
 }

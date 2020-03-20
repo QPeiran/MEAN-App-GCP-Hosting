@@ -51,10 +51,15 @@ export class PostListComponent1 implements OnInit, OnDestroy{
   }
 
   FetchPost(obj: Post, i: number) {
-    this.postService.getTodos().subscribe((todos) => {
-      console.log(todos[i]);
-      obj.title = todos[i].title;
-    });
+    // this.postService.getTodos().subscribe((todos) => {
+    //   console.log(todos[i]);
+    //   obj.title = todos[i].title;
+    // });
+    this.postService.getProfiles().subscribe(P => {
+      console.log(P);
+      obj.title = P.name;
+      obj.content = P.descriptions;
+    })
     let newTodo: Todo = {
       "userId": 1,
       "id": 2,

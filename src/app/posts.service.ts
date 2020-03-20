@@ -1,4 +1,4 @@
-import { Post, Todo } from './posts/post.model';
+import { Post, Todo, Profile } from './posts/post.model';
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -21,8 +21,14 @@ export class PostService {
   // }
 
   todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
+  profileUrl: string = 'https://my-json-server.typicode.com/QPeiran/DB_Schema/profile';
 
   constructor(private http: HttpClient) { }
+
+  getProfiles(): Observable<Profile> {
+    return this.http.get<Profile>(this.profileUrl);
+  } // GET method
+
 
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.todosUrl);
