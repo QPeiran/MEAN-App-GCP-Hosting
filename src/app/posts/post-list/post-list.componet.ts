@@ -61,8 +61,8 @@ export class PostListComponent1 implements OnInit, OnDestroy{
       obj.content = P.descriptions;
     })
     let newTodo: Todo = {
-      "userId": 1,
-      "id": 2,
+      "userId": i++,
+      "id": i++,
       "title": obj.content,
       "completed": true
     }
