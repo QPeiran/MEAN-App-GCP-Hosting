@@ -2,6 +2,7 @@
 
 const express = require('express');
 const app = express();
+// const bodyParser = require("body-parser");
 const port = process.env.PORT || 8080;
 const path = require('path');
 const fetch = require("node-fetch");
@@ -33,14 +34,18 @@ app.listen(port, () => {
   console.log(`Server is running at PORT ${port}`);
 });
 ///////////////////////////MogoDB instead/////////////////
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://Peiran:000923@cluster0.riijg.gcp.mongodb.net/sample_airbnb?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  console.log("FFFFFFFFFFFFFFFFFFFFFFFFF");
-  client.close();
+const mongodb = require('mongodb');
+var ObjectID = mongodb.ObjectID;
+const uri = <myMongoDBURI>;
+mongodb.MongoClient.connect(process.env.MONGODB_URI || uri, function (err, client) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+
+  // Save database object from the callback for reuse.
+  db = client.db();
+  console.log("Database connection ready");
 });
 ////////////////////////////CloudSQL for MySQL part//////////////////////////
 // var mysql = require('mysql');
