@@ -32,9 +32,16 @@ app.get('/text', async (req,res) => {
 app.listen(port, () => {
   console.log(`Server is running at PORT ${port}`);
 });
-
-module.exports = app;
-
+///////////////////////////MogoDB instead/////////////////
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://Peiran:000923@cluster0.riijg.gcp.mongodb.net/sample_airbnb?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  console.log("FFFFFFFFFFFFFFFFFFFFFFFFF");
+  client.close();
+});
 ////////////////////////////CloudSQL for MySQL part//////////////////////////
 // var mysql = require('mysql');
 // var bodyParser = require('body-parser');
@@ -95,3 +102,4 @@ module.exports = app;
 //   });
 //   });
 /////////////////////////////////////////end here///////
+module.exports = app;
